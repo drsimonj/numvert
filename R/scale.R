@@ -11,7 +11,7 @@
 #' @param x Numeric vector
 #' @param new_mean Numeric value of new mean
 #' @param new_sd Numeric value of new standard deviation
-standardise <- function(x, new_mean = 0, new_sd = 1) {
+standardize <- function(x, new_mean = 0, new_sd = 1) {
   x_mean <- mean(x, na.rm = TRUE)
   x_sd   <- sd(x, na.rm = TRUE)
 
@@ -19,8 +19,9 @@ standardise <- function(x, new_mean = 0, new_sd = 1) {
 }
 
 #' @export
-standardize <- function(...) {
-  standardise(...)
+#' @rdname standardize
+standardise <- function(...) {
+  standardize(...)
 }
 
 #' Rescale a numeric vector
@@ -46,11 +47,12 @@ rescale <- function(x, new_min = 0, new_max = 1) {
 #'
 #' @export
 #' @inheritParams rescale
-normalise <- function(x) {
+normalize <- function(x) {
   rescale(x, new_min = 0, new_max = 1)
 }
 
 #' @export
-normalize <- function(...) {
-  normalise(...)
+#' @rdname normalize
+normalise <- function(...) {
+  normalize(...)
 }
