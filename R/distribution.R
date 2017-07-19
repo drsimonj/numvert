@@ -1,5 +1,5 @@
 #
 #
-# Functions to change the distribution
+# Functions that change the distribution
 #
 #

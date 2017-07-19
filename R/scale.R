@@ -1,6 +1,6 @@
 #
 #
-# Functions to change the scale
+# Functions that change the scale
 #
 #
 

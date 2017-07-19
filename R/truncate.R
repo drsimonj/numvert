@@ -1,5 +1,5 @@
 #
 #
-# Functions to truncate the distribution
+# Functions that truncate the data
 #
 #
