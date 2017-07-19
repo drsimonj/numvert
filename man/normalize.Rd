@@ -3,7 +3,7 @@
 \name{normalize}
 \alias{normalize}
 \alias{normalise}
-\title{Normalise a numeric vector}
+\title{Normalize a numeric vector}
 \usage{
 normalize(x)
 

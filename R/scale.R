@@ -5,7 +5,7 @@
 #
 
 
-#' Standardise a numeric vector
+#' Standardize a numeric vector
 #'
 #' @export
 #' @param x Numeric vector
@@ -40,7 +40,7 @@ rescale <- function(x, new_min = 0, new_max = 1) {
   (new_max - new_min) / (x_max - x_min) * (x - x_max) + new_max
 }
 
-#' Normalise a numeric vector
+#' Normalize a numeric vector
 #'
 #' Special case of \code{\link{rescale}}() with new minimum of 0 and maximum of
 #' 1

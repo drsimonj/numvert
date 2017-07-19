@@ -3,7 +3,7 @@
 \name{standardize}
 \alias{standardize}
 \alias{standardise}
-\title{Standardise a numeric vector}
+\title{Standardize a numeric vector}
 \usage{
 standardize(x, new_mean = 0, new_sd = 1)
 
@@ -17,5 +17,5 @@ standardise(...)
 \item{new_sd}{Numeric value of new standard deviation}
 }
 \description{
-Standardise a numeric vector
+Standardize a numeric vector
 }
