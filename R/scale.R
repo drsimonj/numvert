@@ -41,5 +41,5 @@ num_rescale <- function(x, new_min = 0, new_max = 1) {
 #' @export
 #' @inheritParams rescale
 num_norm <- function(x) {
-  rescale(x, new_min = 0, new_max = 1)
+  num_rescale(x, new_min = 0, new_max = 1)
 }

@@ -3,7 +3,11 @@
 numvert
 =======
 
-The goal of numvert is to help transform numeric vectors. Regardless of the operation, numvert functions take a numeric vector and return a numeric vector of the same length.
+The goal of numvert is to help transform numeric vectors. All numvert functions:
+
+-   Take a numeric vector as the first argument
+-   Return a numeric vector of the same length as input
+-   Start with `num_`
 
 Installation
 ------------
@@ -36,7 +40,7 @@ library(numvert)
 
 ``` r
 # Normalise between 0 and 1
-x_norm <- normalise(x)
+x_norm <- num_norm(x)
 hist(x_norm)
 ```
 
@@ -44,10 +48,8 @@ hist(x_norm)
 
 ``` r
 # Standardise to have mean of 0 and SD of 1
-x_std <- standardise(x)
+x_std <- num_std(x)
 hist(x_std)
 ```
 
 ![](README-unnamed-chunk-4-1.png)
-
-Pro tip: British and American spellings are supported (e.g., `normalize` and `normalise`)
