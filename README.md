@@ -3,7 +3,7 @@
 numvert
 =======
 
-The goal of numvert is to help transform numeric vectors by changing their scale or distribution, or by truncating. Regardless of the operation, numvert functions will take a numeric vector and return a numeric vector of the same length.
+The goal of numvert is to help transform numeric vectors. Regardless of the operation, numvert functions take a numeric vector and return a numeric vector of the same length.
 
 Installation
 ------------
@@ -18,10 +18,10 @@ devtools::install_github("drsimonj/numvert")
 Example
 -------
 
-This is a basic example which shows you how to solve a common problem:
+This example shows you how to conduct common rescaling operations with numvert:
 
 ``` r
-# Normally distributed variable with a mean of 25 and SD of 5
+# Create a normally distributed variable with a mean of 25 and SD of 5
 x <- rnorm(1000, mean = 25, sd = 5)
 hist(x)
 ```
