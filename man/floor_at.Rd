@@ -2,7 +2,7 @@
 % Please edit documentation in R/outlier_treatment.R
 \name{floor_at}
 \alias{floor_at}
-\title{Flor a numeric vector at a specified value}
+\title{Floor a numeric vector at a specified value}
 \usage{
 floor_at(x, floor, replacement = NA)
 }

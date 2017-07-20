@@ -18,7 +18,7 @@ cap_at <- function(x, cap, replacement = NA) {
   x
 }
 
-#' Flor a numeric vector at a specified value
+#' Floor a numeric vector at a specified value
 #'
 #' Replace all elements of a numeric vector that are below a specified value
 #' with another value
