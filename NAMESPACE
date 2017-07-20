@@ -3,6 +3,4 @@
 export(num_norm)
 export(num_rescale)
 export(num_std)
-export(num_truncate)
-export(num_truncate_above)
-export(num_truncate_below)
+export(num_trunc)
