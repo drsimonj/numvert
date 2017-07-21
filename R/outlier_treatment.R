@@ -32,3 +32,30 @@ num_trunc <- function(x, prop, tail = c("both", "top", "bottom")) {
   x[x < trunc_vals[1] | x > trunc_vals[2]] <- NA
   x
 }
+
+#' Truncate numeric vector using interquartile range
+#'
+#' Truncate elements of a numeric vector that fall outside the range defined by
+#' the vector's mean, plus/minus the interquartile range (IQR) multipled by some
+#' value (1.5 by default)
+#'
+#' @export
+#' @param x Numeric vector
+#' @param iqr_multipler Value by which to multiply the IQR when calculating the
+#'   truncation boundary
+#'
+#' @examples
+#' boxplot(iris$Sepal.Width)  # Outliers present
+#' boxplot(num_trunc_iqr(iris$Sepal.Width))  # Outliers removed
+#'
+num_trunc_iqr <- function(x, iqr_multipler = 1.5) {
+  if (iqr_multipler <= 0)
+    stop("`iqr_multipler` must be a value greater than zero")
+
+  qs <- quantile(x, c(.25, .75), na.rm = TRUE)
+  weighted_iqr <- iqr_multipler * (qs[2] - qs[1])
+  x_mean <- mean(x, na.rm = TRUE)
+
+  x[x < (x_mean - weighted_iqr) | x > (x_mean + weighted_iqr)] <- NA
+  x
+}

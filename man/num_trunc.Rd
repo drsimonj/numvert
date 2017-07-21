@@ -2,7 +2,7 @@
 % Please edit documentation in R/outlier_treatment.R
 \name{num_trunc}
 \alias{num_trunc}
-\title{Truncate numeric vector at specified value(s)}
+\title{Truncate proportion of numeric vector}
 \usage{
 num_trunc(x, prop, tail = c("both", "top", "bottom"))
 }
@@ -11,10 +11,11 @@ num_trunc(x, prop, tail = c("both", "top", "bottom"))
 
 \item{prop}{Proportion of data to truncate}
 
-\item{tail}{Tail on which to truncate}
+\item{tail}{Tail(s) to truncate}
 }
 \description{
-Replace elements of a numeric vector identified by specific cut point(s)
+Truncate a proportion of elements from the top, bottom, or both tails of a
+numeric vector by replacing them with NA
 }
 \examples{
 num_trunc(0:10, 2, 8)
