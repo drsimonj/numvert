@@ -6,7 +6,10 @@
 \usage{
 num_norm(x)
 }
+\arguments{
+\item{x}{Numeric vector}
+}
 \description{
-Special case of \code{\link{rescale}}() with new minimum of 0 and maximum of
-1
+Special case of \code{\link{num_rescale}}() with new minimum of 0 and maximum
+of 1
 }

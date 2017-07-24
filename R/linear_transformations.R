@@ -38,11 +38,11 @@ num_rescale <- function(x, new_min = 0, new_max = 1) {
 
 #' Normalize a numeric vector
 #'
-#' Special case of \code{\link{rescale}}() with new minimum of 0 and maximum of
-#' 1
+#' Special case of \code{\link{num_rescale}}() with new minimum of 0 and maximum
+#' of 1
 #'
 #' @export
-#' @inheritParams rescale
+#' @inheritParams num_rescale
 num_norm <- function(x) {
   num_rescale(x, new_min = 0, new_max = 1)
 }
