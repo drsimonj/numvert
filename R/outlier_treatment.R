@@ -15,9 +15,9 @@
 #' @param tail Tail(s) to target
 #'
 #' @examples
-#' num_trunc(0:10, .4)
-#' num_trunc(0:10, .4, "top)
-num_trunc <- function(x, prop, tail = c("both", "top", "bottom")) {
+#' num_truncate(0:10, .4)
+#' num_truncate(0:10, .4, "top)
+num_truncate <- function(x, prop, tail = c("both", "top", "bottom")) {
   props <- p_to_quantiles(prop, tail)
   taget_vals <- quantile(x, props, na.rm = TRUE)
 
@@ -38,9 +38,9 @@ num_trunc <- function(x, prop, tail = c("both", "top", "bottom")) {
 #'
 #' @examples
 #' boxplot(iris$Sepal.Width)  # Outliers present
-#' boxplot(num_trunc_iqr(iris$Sepal.Width))  # Outliers removed
+#' boxplot(num_truncate_iqr(iris$Sepal.Width))  # Outliers removed
 #'
-num_trunc_iqr <- function(x, iqr_multipler = 1.5) {
+num_truncate_iqr <- function(x, iqr_multipler = 1.5) {
   if (iqr_multipler <= 0)
     stop("`iqr_multipler` must be a value greater than zero")
 
@@ -58,7 +58,7 @@ num_trunc_iqr <- function(x, iqr_multipler = 1.5) {
 #' numeric vector by replacing them with the boundary value(s)
 #'
 #' @export
-#' @inheritParams num_trunc
+#' @inheritParams num_truncate
 #'
 #' @examples
 #' num_censor(0:10, .4)
