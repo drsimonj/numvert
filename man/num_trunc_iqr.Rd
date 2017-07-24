@@ -10,7 +10,7 @@ num_trunc_iqr(x, iqr_multipler = 1.5)
 \item{x}{Numeric vector}
 
 \item{iqr_multipler}{Value by which to multiply the IQR when calculating the
-truncation boundary}
+target boundary}
 }
 \description{
 Truncate elements of a numeric vector that fall outside the range defined by

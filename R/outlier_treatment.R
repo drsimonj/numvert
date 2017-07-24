@@ -11,25 +11,17 @@
 #'
 #' @export
 #' @param x Numeric vector
-#' @param prop Proportion of data to truncate
-#' @param tail Tail(s) to truncate
+#' @param prop Proportion of data to target
+#' @param tail Tail(s) to target
 #'
 #' @examples
-#' num_trunc(0:10, 2, 8)
+#' num_trunc(0:10, .4)
+#' num_trunc(0:10, .4, "top)
 num_trunc <- function(x, prop, tail = c("both", "top", "bottom")) {
-  tail <- match.arg(tail)
-  if(prop <= 0 | prop >= 1)
-    stop("`prop` must be a value between 0 and 1")
+  props <- p_to_quantiles(prop, tail)
+  taget_vals <- quantile(x, props, na.rm = TRUE)
 
-  props <- switch(tail,
-    both   = c(prop/2, 1 - prop/2),
-    top    = c(0, 1 - prop),
-    bottom = c(prop, 1)
-  )
-
-  trunc_vals <- quantile(x, props, na.rm = TRUE)
-
-  x[x < trunc_vals[1] | x > trunc_vals[2]] <- NA
+  x[x < taget_vals[1] | x > taget_vals[2]] <- NA
   x
 }
 
@@ -42,7 +34,7 @@ num_trunc <- function(x, prop, tail = c("both", "top", "bottom")) {
 #' @export
 #' @param x Numeric vector
 #' @param iqr_multipler Value by which to multiply the IQR when calculating the
-#'   truncation boundary
+#'   target boundary
 #'
 #' @examples
 #' boxplot(iris$Sepal.Width)  # Outliers present
@@ -58,4 +50,39 @@ num_trunc_iqr <- function(x, iqr_multipler = 1.5) {
 
   x[x < (x_mean - weighted_iqr) | x > (x_mean + weighted_iqr)] <- NA
   x
+}
+
+#' Censor proportion of a numeric vector
+#'
+#' Censor a proportion of elements from the top, bottom, or both tails of a
+#' numeric vector by replacing them with the boundary value(s)
+#'
+#' @export
+#' @inheritParams num_trunc
+#'
+#' @examples
+#' num_censor(0:10, .4)
+#' num_censor(0:10, .4, "top)
+num_censor <- function(x, prop, tail = c("both", "top", "bottom")) {
+  props <- p_to_quantiles(prop, tail)
+  taget_vals <- quantile(x, props, na.rm = TRUE)
+
+  x[x < taget_vals[1]] <- taget_vals[1]
+  x[x > taget_vals[2]] <- taget_vals[2]
+  x
+}
+
+
+#' Convert single probability and tail method to two quantiles
+p_to_quantiles <- function(prop, tail = c("both", "top", "bottom")) {
+  tail <- match.arg(tail)
+
+  if(prop <= 0 | prop >= 1)
+    stop("`prop` must be a value between 0 and 1")
+
+  switch(tail,
+    both   = c(prop/2, 1 - prop/2),
+    top    = c(0, 1 - prop),
+    bottom = c(prop, 1)
+  )
 }

@@ -9,14 +9,11 @@ num_trunc(x, prop, tail = c("both", "top", "bottom"))
 \arguments{
 \item{x}{Numeric vector}
 
-\item{prop}{Proportion of data to truncate}
+\item{prop}{Proportion of data to target}
 
-\item{tail}{Tail(s) to truncate}
+\item{tail}{Tail(s) to target}
 }
 \description{
 Truncate a proportion of elements from the top, bottom, or both tails of a
 numeric vector by replacing them with NA
-}
-\examples{
-num_trunc(0:10, 2, 8)
 }
