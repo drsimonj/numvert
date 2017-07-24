@@ -24,6 +24,9 @@ num_std <- function(x, new_mean = 0, new_sd = 1) {
 #' @param new_min Numeric value of new minimum
 #' @param new_max Numeric value of new maximum
 num_rescale <- function(x, new_min = 0, new_max = 1) {
+  if (any(is.infinite(x)))
+    stop("`x` possesses inifinite values and cannot be rescaled")
+
   if (new_max <= new_min)
     warning("`new_max` is not greater than `new_min`")
 
