@@ -4,7 +4,7 @@
 #
 #
 
-#' Locate quantile boundaries of a numeric vector
+#' Locate numeric vector quantile(s)
 #'
 #' \code{num_quantile}() is a wrapper for \code{\link[stats]{quantile}}() with
 #' different default values

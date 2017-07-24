@@ -2,7 +2,7 @@
 % Please edit documentation in R/locations.R
 \name{num_quantile}
 \alias{num_quantile}
-\title{Locate quantile boundaries of a numeric vector}
+\title{Locate numeric vector quantile(s)}
 \usage{
 num_quantile(x, probs = c(0, 1), na.rm = TRUE, names = FALSE, ...)
 }
