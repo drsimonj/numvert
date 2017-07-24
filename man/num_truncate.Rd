@@ -2,18 +2,16 @@
 % Please edit documentation in R/outlier_treatment.R
 \name{num_truncate}
 \alias{num_truncate}
-\title{Truncate proportion of numeric vector}
+\title{Truncate numeric vector}
 \usage{
-num_truncate(x, prop, tail = c("both", "top", "bottom"))
+num_truncate(x, bounds = c(-Inf, Inf))
 }
 \arguments{
 \item{x}{Numeric vector}
 
-\item{prop}{Proportion of data to target}
-
-\item{tail}{Tail(s) to target}
+\item{bounds}{Two-element numeric vector defining the lower and upper bounds
+(in that order)}
 }
 \description{
-Truncate a proportion of elements from the top, bottom, or both tails of a
-numeric vector by replacing them with NA
+Truncate top and/or bottom of a numeric vector by replacing with NA
 }
