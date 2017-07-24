@@ -3,7 +3,7 @@
 numvert
 =======
 
-The goal of numvert is to help transform numeric vectors. All numvert functions:
+The goal of numvert is to help transform numeric vectors by way of functions that:
 
 -   Take a numeric vector as the first argument
 -   Return a numeric vector of the same length as input
