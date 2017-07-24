@@ -47,12 +47,12 @@ library(numvert)
 
 ```{r}
 # Normalise between 0 and 1
-x_norm <- num_norm(x)
+x_norm <- num_normalize(x)
 hist(x_norm)
 ```
 
 ```{r}
 # Standardise to have mean of 0 and SD of 1
-x_std <- num_std(x)
+x_std <- num_standardize(x)
 hist(x_std)
 ```

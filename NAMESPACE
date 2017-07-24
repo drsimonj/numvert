@@ -2,8 +2,10 @@
 
 export(num_censor)
 export(num_iqr)
-export(num_norm)
+export(num_normalise)
+export(num_normalize)
 export(num_quantile)
 export(num_rescale)
-export(num_std)
+export(num_standardise)
+export(num_standardize)
 export(num_truncate)
